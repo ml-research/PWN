@@ -2,6 +2,13 @@
 
 This repository is the official implementation of Predictive Whittle Networks (PWN) introduced in [Predictive Whittle Networks for Time Series](https://ml-research.github.io/papers/yu2022whittle.pdf) by Zhongjie Yu, Fabrizio Ventola, Nils Thoma, Devendra Singh Dhami, Martin Mundt, and Kristian Kersting, published at UAI 2022.
 
+This repository is developed based on the code for RECOWNs [1].
+The repository depends solely on PyTorch.
+Therefore, it also contains PyTorch implementations of existing methods, e.g. CSPNs [2] or Spectral RNNs [3].
+
+Due to a confidentiality agreement concerning the involved retail data, this data and every related information has been removed from the repository beforehand.
+If this causes any problems when reproducing the results, please do not hesitate and open up an issue or write an E-Mail: <nthoma@nilsthoma.de>.
+
 ## Setup
 
 This will clone the repo, install a Python virtual env (requires Python 3.6), and the required packages.
@@ -30,6 +37,14 @@ If you find this code useful in your research, please consider citing:
       pages = {},
       year = {2022}
     }
+    
+
+
+[1] Thoma, N.; Yu, Z.; Ventola, F.; and Kersting, K. RECOWNs: Probabilistic Circuits for Trustworthy Time SeriesForecasting. 4th Workshop on Tractable Probabilistic Modeling (TPM 2021).
+
+[2] Shao, X., Molina, A., Vergari, A., Stelzner, K., Peharz, R., Liebig, T., & Kersting, K. Conditional sum-product networks: Imposing structure on deep probabilistic architectures. In International Conference on Probabilistic Graphical Models (PGM 2020).
+
+[3] Wolter, M.; Gall, J.; and Yao, A. Sequence Predic-tion Using Spectral RNNs. In International Conference on Artificial Neural Networks. 2020.
 
 ## Acknowledgments
 
