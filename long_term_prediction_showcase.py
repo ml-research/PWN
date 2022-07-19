@@ -31,7 +31,7 @@ config.use_cached_predictions = False
 
 config_c = CWSPNConfig()
 
-with open('data_cache_pwr_long.pkl', 'rb') as f:
+with open('./res/data_cache_pwr_long.pkl', 'rb') as f:
     train_x, train_y, test_x, test_y, train_y_values, test_y_values, \
     column_names, embedding_sizes, preprocessing = pickle.load(f)
 
@@ -44,15 +44,15 @@ preprocessing = ZScoreNormalization((0,), 2, 1, [True, True, True, False], conte
                                     prediction_timespan=int(40 * 96), timespan_step=96,
                                     single_group=False, multivariate=False, retail=False)
 
-model = ProNeW(config, config_c, train_spn_on_gt=False, train_spn_on_prediction=True, ll_weight=1e-5,
+model = PWN(config, config_c, train_spn_on_gt=False, train_spn_on_prediction=True, ll_weight=1e-5,
                         ll_weight_inc_dur=50, westimator_early_stopping=8)
 
-model_filepath = f'{model_base_path}05_14_2021_09_34_32__ProNeW-ReadPowerPKL'  # Originally trained on 5 * 96
+model_filepath = f'{model_base_path}07_19_2022_15_43_15__PWN-ReadPowerPKL'  # change the file name after executing training.py
 model.load(model_filepath)
 
-x_raw, y_raw, _, _ = preprocessing.apply(ReadPowerPKL().data)
+x_raw, y_raw, _, _, _, _, _ = preprocessing.apply(ReadPowerPKL().data)
 
-for key in [8.0]:  # x_raw.keys():
+for key in [2018.0]:  # x_raw.keys():
     x = {'All': x_raw[key][-2:-1]}
     y = {'All': y_raw[key][-2:-1]}
 
@@ -135,13 +135,6 @@ for key in [8.0]:  # x_raw.keys():
             pred_ll[-config.step_width:] += w[:config.step_width]
         else:
             pred_ll[(i - 1) * config.step_width:(i + 1) * config.step_width] += w
-
-    plt.rcParams.update({'font.size': 44, 'figure.figsize': (47, 13), 'ps.useafm': True,
-                         'pdf.use14corefonts': True, 'text.usetex': True})
-    plt.rcParams['text.latex.preamble'] = [r'\usepackage{sansmath}', r'\usepackage{textcomp}',
-                                           r'\sansmath']
-    plt.rcParams['font.family'] = 'sans-serif'
-    plt.rcParams['font.sans-serif'] = 'Helvetica, Avant Garde, Computer Modern Sans serif'
 
     # We use the LR-Ratio here, based on train min / max ll
     min_ll = -482.12857
