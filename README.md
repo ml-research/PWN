@@ -14,17 +14,26 @@ If this causes any problems when reproducing the results, please do not hesitate
 This will clone the repo, install a Python virtual env (requires Python 3.6), and the required packages.
 
     git clone https://github.com/ml-research/PWN.git
+    cd PWN
     ./setup.sh
 
-## Execution
+## Demos
 
 ### Activate the virtual environment:
 
     source ./venv_pwn/bin/activate
 
-To run an experiment on the data set Power, execute
+### To run an experiment on the data set Power
 
-    training.py
+    python training.py
+
+### To run a showcase of long range prediction
+
+Download "data_cache_pwr_long.pkl" data from [TU datalib](https://tudatalib.ulb.tu-darmstadt.de/bitstream/handle/tudatalib/3532/):
+
+    wget https://tudatalib.ulb.tu-darmstadt.de/bitstream/handle/tudatalib/3532/data_cache_pwr_long.pkl -P res
+    python long_term_prediction_showcase.py
+
 
 ## Citation
 If you find this code useful in your research, please consider citing:
@@ -39,7 +48,7 @@ If you find this code useful in your research, please consider citing:
     }
     
 
-
+\
 [1] Thoma, N.; Yu, Z.; Ventola, F.; and Kersting, K. RECOWNs: Probabilistic Circuits for Trustworthy Time SeriesForecasting. 4th Workshop on Tractable Probabilistic Modeling (TPM 2021).
 
 [2] Shao, X., Molina, A., Vergari, A., Stelzner, K., Peharz, R., Liebig, T., & Kersting, K. Conditional sum-product networks: Imposing structure on deep probabilistic architectures. In International Conference on Probabilistic Graphical Models (PGM 2020).
