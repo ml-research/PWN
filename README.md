@@ -5,23 +5,23 @@ This repository is the official implementation of Predictive Whittle Networks (P
 It evolved from the implementation of the seminal work named "RECOWNs" [1], presented at the 4th Workshop on Tractable Probabilistic Modeling (TPM 2021) @ UAI 2021. 
 
 The repository depends solely on PyTorch.
-It also contains PyTorch implementations of other existing methods, e.g. Whittle SPNs [2], Conditional SPNs [3] or Spectral RNNs [4].
+It also contains PyTorch implementations of other existing methods, e.g., Whittle SPNs [2], Conditional SPNs [3], and Spectral RNNs [4].
 
 The employed dataset "Retail" and its related information have been removed from the repository due to a confidentiality agreement (NDA). 
 Please, do not hesitate to open an issue or to write an e-mail to <nthoma@nilsthoma.de> if this causes issues in reproducing the results.
 
 ###### [1] Thoma, N.; Yu, Z.; Ventola, F.; and Kersting, K. RECOWNs: Probabilistic Circuits for Trustworthy Time Series Forecasting. 4th Workshop on Tractable Probabilistic Modeling (TPM 2021) @ UAI 2021.
 
-###### [2] Yu, Z.; Ventola, F.; and Kersting, K. Whittle Networks: A Deep Likelihood Model for Time Series. In International Conference on Machine Learning (ICML 2021).
+###### [2] Yu, Z.; Ventola, F.; and Kersting, K. Whittle Networks: A Deep Likelihood Model for Time Series. International Conference on Machine Learning (ICML 2021).
 
-###### [3] Shao, X.; Molina, A.; Vergari, A.; Stelzner, K.; Peharz, R.; Liebig, T.; and Kersting, K. Conditional sum-product networks: Imposing structure on deep probabilistic architectures. In International Conference on Probabilistic Graphical Models (PGM 2020).
+###### [3] Shao, X.; Molina, A.; Vergari, A.; Stelzner, K.; Peharz, R.; Liebig, T.; and Kersting, K. Conditional sum-product networks: Imposing structure on deep probabilistic architectures. International Conference on Probabilistic Graphical Models (PGM 2020).
 
-###### [4] Wolter, M.; Gall, J.; and Yao, A. Sequence Predic-tion Using Spectral RNNs. In International Conference on Artificial Neural Networks. 2020.
+###### [4] Wolter, M.; Gall, J.; and Yao, A. Sequence Predic-tion Using Spectral RNNs. International Conference on Artificial Neural Networks. 2020.
 
 
 ## Setup
 
-This will clone the repo, install a Python virtual environment (requires Python 3.8), and the required packages.
+This will clone the repository, install a Python virtual environment (requires Python 3.8), and the required packages.
 
     git clone https://github.com/ml-research/PWN.git
     cd PWN
@@ -37,7 +37,7 @@ This will clone the repo, install a Python virtual environment (requires Python 
 
     python training.py
 
-### To run a demo of a long range prediction
+### To run a demo of a long-range prediction
 
 First, you need to download "data_cache_pwr_long.pkl" data from [TU datalib](https://tudatalib.ulb.tu-darmstadt.de/handle/tudatalib/3532/):
 
